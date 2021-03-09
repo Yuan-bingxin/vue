@@ -1,0 +1,39 @@
+<!--创建Vue实例对象，设置el属性和data属性-->
+<!--使用简洁的模板语法吧数据渲染到页面上-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="with=device-width",initial-scale="1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>data:数据对象</title>
+</head>
+<body>
+<div id="app">
+<!--    {}把数据和页面关联起来-->
+    {{ message }}
+    <h2> {{ school.name }} {{ school.mobel }}</h2>
+    <ul>
+        <li>{{ campus[0] }}</li>
+        <li>{{ campus[3] }}</li>
+    </ul>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+
+    var app = new Vue({
+        // 在CSS中 # 是id选择器
+        el: "#app",
+        data: {
+            message: "袁冰欣",
+            school:{
+                name:"咸阳职业技术学院",
+                mobel:"17795906752"
+            },
+            campus:["咸阳","渭南","西安","宝鸡 "]
+        }
+    })
+</script>
+</body>
+</html>

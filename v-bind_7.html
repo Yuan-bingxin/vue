@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="with=device-width",initial-scale="1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!--    为元素绑定属性-->
+    <title>v-bind指令</title>
+
+    <style>
+        .active{
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+<!--    添加照片-->
+    <img v-bind:src="imgSrc" alt="">
+    <br>
+<!--    简写-->
+    <img :src="imgSrc" alt="" :title="imgTitle+'!!!' "
+    :class="isActive?'active':''"@click="toggleActive">
+<!--    用对象的方式来写-->
+    <br>
+    <img :src="imgSrc" alt="" :title="imgTitle+'!!!' " :class="
+    {active:isActive}" @click="toggleActive">
+</div>
+<script>
+    var app = new Vue({
+      el:"#app",
+      data:{
+          imgSrc:"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3357103222,961145764&fm=26&gp=0.jpg",
+          imgTitle:"袁冰欣写的",
+          isActive:false
+      },
+        methods:{
+          toggleActive:function () {
+              this.isActive = !this.isActive
+          }
+        },
+    })
+</script>
+</body>
+</html>

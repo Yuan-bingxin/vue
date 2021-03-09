@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="with=device-width",initial-scale="1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!--    为元素绑定属性-->
+    <title>v-bind指令</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div id="mask">
+        <div class="center">
+            <h2 class="title">
+                <img src="./image/11.jpg" alt="">
+            </h2>
+            <!--图片-->
+            <img src="imgArr[index]" alt="">
+            <!--左箭头-->
+            <a href="javascript:void(0)" v-show="index" @click="prev" class="left">
+                <img src="./image/prew.jpg" alt="">
+            </a>
+            <!--左箭头-->
+            <a href="javascript:void(0)" @click="next" class="right">
+                <img src="./image/next.jpg" alt="">
+            </a>
+        </div>
+    </div>
+
+<script>
+    var app = new Vue({
+        el:"#mask",
+        data:{
+            imgArr:[
+                "H:\PyCharmProject\vue\image\01.jpg",
+                "H:\PyCharmProject\vue\image\02.jpg",
+                "H:\PyCharmProject\vue\image\03.jpg",
+                "H:\PyCharmProject\vue\image\04.jpg",
+                "H:\PyCharmProject\vue\image\05.jpg",
+                "H:\PyCharmProject\vue\image\06.jpg",
+                "H:\PyCharmProject\vue\image\08.jpg",
+                "H:\PyCharmProject\vue\image\07.jpg",
+                "H:\PyCharmProject\vue\image\09.jpg",
+                "H:\PyCharmProject\vue\image\10.jpg",
+            ],
+            index:0
+        },
+        methods:{
+            prev:function () {
+                this.index--;
+            },
+            next:function () {
+                this.index++;
+            }
+        },
+
+    })
+</script>
+</body>
+</html>
